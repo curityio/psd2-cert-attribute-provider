@@ -78,102 +78,57 @@ class StubConf : Psd2CertificateAttributeProviderConfiguration {
     override fun getCertificateSubjectAttributeName(): String = "x5c"
 
     override fun getExceptionFactory(): ExceptionFactory {
+        fun assertionError(): java.lang.RuntimeException {
+            throw RuntimeException("Should not be called")
+        }
         return object : ExceptionFactory {
-            override fun notFoundException(p0: ErrorCode?, p1: String?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun unauthorizedException(p0: ErrorCode?, p1: String?, p2: String?, p3: String?) = throw assertionError()
 
-            override fun contentTypeNotAcceptable(p0: MutableCollection<String>?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun notFoundException(p0: ErrorCode?, p1: String?) = throw assertionError()
 
-            override fun requestValidationException(p0: MutableSet<ErrorMessage>?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun contentTypeNotAcceptable(p0: MutableCollection<String>?) = throw assertionError()
 
-            override fun methodNotAllowed(): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun requestValidationException(p0: MutableSet<ErrorMessage>?) = throw assertionError()
 
-            override fun methodNotAllowed(p0: String?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun methodNotAllowed() = throw assertionError()
 
-            override fun externalServiceException(p0: String?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun methodNotAllowed(p0: String?) = throw assertionError()
 
-            override fun forbiddenException(p0: ErrorCode?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun externalServiceException(p0: String?) = throw assertionError()
 
-            override fun forbiddenException(p0: ErrorCode?, p1: String?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun forbiddenException(p0: ErrorCode?) = throw assertionError()
 
-            override fun templateNotFoundException(p0: String?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun forbiddenException(p0: ErrorCode?, p1: String?) = throw assertionError()
 
-            override fun unauthorizedException(p0: ErrorCode?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun templateNotFoundException(p0: String?) = throw assertionError()
 
-            override fun unauthorizedException(p0: ErrorCode?, p1: String?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun unauthorizedException(p0: ErrorCode?) = throw assertionError()
 
-            override fun unauthorizedException(p0: ErrorCode?, p1: String?, p2: String?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun unauthorizedException(p0: ErrorCode?, p1: String?) = throw assertionError()
 
-            override fun unauthorizedException(p0: ErrorCode?, p1: String?, p2: String?, p3: String?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun unauthorizedException(p0: ErrorCode?, p1: String?, p2: String?) = throw assertionError()
 
-            override fun badRequestException(p0: ErrorCode?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun badRequestException(p0: ErrorCode?) = throw assertionError()
 
-            override fun badRequestException(p0: ErrorCode?, p1: String?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun badRequestException(p0: ErrorCode?, p1: String?) = throw assertionError()
 
-            override fun redirectException(p0: String?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun redirectException(p0: String?) = throw assertionError()
 
-            override fun redirectException(p0: String?, p1: RedirectStatusCode?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun redirectException(p0: String?, p1: RedirectStatusCode?) = throw assertionError()
 
-            override fun redirectException(p0: String?, p1: RedirectStatusCode?, p2: MutableMap<String, MutableCollection<String>>?, p3: Boolean): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun redirectException(p0: String?, p1: RedirectStatusCode?, p2: MutableMap<String, MutableCollection<String>>?, p3: Boolean) = throw assertionError()
 
-            override fun redirectException(p0: URI?, p1: RedirectStatusCode?, p2: MutableMap<String, MutableCollection<String>>?, p3: Boolean): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun redirectException(p0: URI?, p1: RedirectStatusCode?, p2: MutableMap<String, MutableCollection<String>>?, p3: Boolean) = throw assertionError()
 
-            override fun configurationException(p0: String?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun configurationException(p0: String?) = throw assertionError()
 
-            override fun internalServerException(p0: ErrorCode?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun internalServerException(p0: ErrorCode?) = throw assertionError()
 
-            override fun internalServerException(p0: ErrorCode?, p1: String?): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun internalServerException(p0: ErrorCode?, p1: String?) = throw assertionError()
 
-            override fun serviceUnavailable(): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun serviceUnavailable() = throw assertionError()
 
-            override fun notFoundException(): RuntimeException {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun notFoundException() = throw assertionError()
         }
     }
 
