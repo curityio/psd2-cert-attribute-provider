@@ -17,20 +17,13 @@
 package io.curity.identiserver.data.access.certificate
 
 import se.curity.identityserver.sdk.plugin.descriptor.DataAccessProviderPluginDescriptor
-import se.curity.identityserver.sdk.datasource.AttributeDataAccessProvider
 
 class Psd2CertificateAttributeProviderPluginDescriptor :
         DataAccessProviderPluginDescriptor<Psd2CertificateAttributeProviderConfiguration> {
 
-    override fun getPluginImplementationType(): String {
-        return Psd2CertificateAttributeProvider::class.java.typeName
-    }
+    override fun getPluginImplementationType() = Psd2CertificateAttributeProvider::class.java.typeName
 
-    override fun getConfigurationType(): Class<Psd2CertificateAttributeProviderConfiguration> {
-        return Psd2CertificateAttributeProviderConfiguration::class.java
-    }
+    override fun getConfigurationType() = Psd2CertificateAttributeProviderConfiguration::class.java
 
-    override fun getAttributeDataAccessProvider(): Class<out AttributeDataAccessProvider> {
-        return Psd2CertificateAttributeProvider::class.java
-    }
+    override fun getAttributeDataAccessProvider() = Psd2CertificateAttributeProvider::class.java
 }
