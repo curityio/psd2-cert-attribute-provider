@@ -15,10 +15,6 @@ tasks.withType(JavaCompile) {
 repositories {
     maven {
         url "https://nexus.curity.se/nexus/content/repositories/customer-release-repo/"
-        credentials {
-            username "${mavenUser}"
-            password "${mavenPassword}"
-        }
     }
     mavenCentral()
 }
@@ -38,6 +34,7 @@ task dist(type: Copy, dependsOn: jar) {
     exclude "identityserver.sdk*"
     into "dist"
 }
+
 buildscript {
     ext.kotlin_version = '1.3.31'
     repositories {
@@ -47,13 +44,10 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
+
 compileKotlin {
     kotlinOptions {
         jvmTarget = "1.8"
     }
 }
-compileTestKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
+

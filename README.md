@@ -2,8 +2,11 @@
 
 This plugin parses a certificate, and return the PSD2 roles and organizationIdentifier as attributes
 
-## Build plugin
-First, collect credentials to the Curity Nexus, to be able to fetch the SDK. Create a file called `gradle.properties` in the root of the repository, and put the credentials there.
+NOTE:
+Since version 4.2.0 Curity contains a claims provider for parsing the client certificate, rendering this plugin obsolete.
 
-Then, build the plugin by:
+## Build plugin
+Then, build the plugin with:
 `./gradlew dist`
+
+This will create a folder `dist`, that contains the full plugin group that can be copied to the Curity plugin folder.
