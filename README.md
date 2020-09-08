@@ -1,7 +1,7 @@
 # PSD2 Certificate Attribute provider #
 
-[![Quality](https://curity.io/assets/images/badges/psd2-cert-attribute-provider-quality.svg)](https://curity.io/resources/code-examples/status/)
-[![Availability](https://curity.io/assets/images/badges/psd2-cert-attribute-provider-availability.svg)](https://curity.io/resources/code-examples/status/)
+[![Quality](https://img.shields.io/badge/quality-demo-red)](https://curity.io/resources/code-examples/status/)
+[![Availability](https://img.shields.io/badge/availability-source-blue)](https://curity.io/resources/code-examples/status/)
 
 This plugin parses a certificate, and return the PSD2 roles and organizationIdentifier as attributes
 
